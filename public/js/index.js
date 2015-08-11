@@ -122,3 +122,11 @@ function stopMetronome(completed) {
 		$('#completedRecording p').html(date.getFullYear() + '-' + date.getMonth() + '-' + date.getDay() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds());
 	}
 }
+
+function startSong() {
+	$('#browseCircleWrapper .browseSmallCircle:nth-child(1) video')[0].play();
+	$('#browseCircleWrapper .browseSmallCircle:nth-child(2) video')[0].play();
+	$('#browseCircleWrapper .browseSmallCircle:nth-child(3) video')[0].play();
+	$('#browseCircleWrapper .browseSmallCircle:nth-child(4) video')[0].play();
+	$('#browseCircleWrapper .browseSmallCircle:nth-child(5) video')[0].play();
+}
