@@ -5,7 +5,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Oswald:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		<div id='backButton'>BACK!</div>
+		<div id='backButton' onclick="gotoView('', 'welcomeWrapper')">HOME!</div>
 		<div id='mainWrapper' class='notSelectable'>
 			<div id='filter'></div>
 			<div id='welcomeWrapper'>
@@ -17,58 +17,67 @@
 							<div id='buttonsWrapper'>
 								<div class='button' onclick="gotoView('welcomeWrapper', 'browseWrapper')">Listen to music</div>
 								<p>or</p>
-								<div class='button' onclick="gotoView('welcomeWrapper', 'createWrapper')">Start from scratch</div>
+								<div class='button' onclick="updateCreateWrapper(0);gotoView('welcomeWrapper', 'createWrapper')">Start from scratch</div>
 							</div>
 						</td>
 					</tr>
 				</table>
 			</div>
 			<div id='browseWrapper'>
-				<div id='browseCircleWrapper' class='fiveCircles'>
+				<div id='nextSongWrapper' onclick='changeSong(true)'>
+					<p>&gt;</p>
+				</div>
+				<div id='prevSongWrapper' onclick='changeSong(false)'>
+					<p>&lt;</p>
+				</div>
+				<div id='browseCircleWrapper'>
 					<div class='browseSmallCircle'>
 						<div class='browseSmallCircleInner'>
-							<video muted src='../public/video/test.mov' preload='auto'></video>
+							<video muted src='' preload='auto'></video>
 						</div>
-						<div class='browseSmallCircleLeftArrow'><p>&lt;</p></div>
-						<div class='browseSmallCircleRightArrow'><p>&gt;</p></div>
+						<div class='browseSmallCircleLeftArrow' onclick='changeTrack(0,false)'><p>&lt;</p></div>
+						<div class='browseSmallCircleRightArrow' onclick='changeTrack(0,true)'><p>&gt;</p></div>
 						<div class='browseSmallCircleFlag'></div>
 					</div>
 					<div class='browseSmallCircle'>
 						<div class='browseSmallCircleInner'>
-							<video muted src='../public/video/test.mov' preload='auto'></video>
+							<video muted src='' preload='auto'></video>
 						</div>
-						<div class='browseSmallCircleLeftArrow'><p>&lt;</p></div>
-						<div class='browseSmallCircleRightArrow'><p>&gt;</p></div>
+						<div class='browseSmallCircleLeftArrow' onclick='changeTrack(1,false)'><p>&lt;</p></div>
+						<div class='browseSmallCircleRightArrow' onclick='changeTrack(1,true)'><p>&gt;</p></div>
 						<div class='browseSmallCircleFlag'></div>
 					</div>
 					<div class='browseSmallCircle'>
 						<div class='browseSmallCircleInner'>
-							<video muted src='../public/video/test.mov' preload='auto'></video>
+							<video muted src='' preload='auto'></video>
 						</div>
-						<div class='browseSmallCircleLeftArrow'><p>&lt;</p></div>
-						<div class='browseSmallCircleRightArrow'><p>&gt;</p></div>
+						<div class='browseSmallCircleLeftArrow' onclick='changeTrack(2,false)'><p>&lt;</p></div>
+						<div class='browseSmallCircleRightArrow' onclick='changeTrack(2,true)'><p>&gt;</p></div>
 						<div class='browseSmallCircleFlag'></div>
 					</div>
 					<div class='browseSmallCircle'>
 						<div class='browseSmallCircleInner'>
-							<video muted src='../public/video/test.mov' preload='auto'></video>
+							<video muted src='' preload='auto'></video>
 						</div>
-						<div class='browseSmallCircleLeftArrow'><p>&lt;</p></div>
-						<div class='browseSmallCircleRightArrow'><p>&gt;</p></div>
+						<div class='browseSmallCircleLeftArrow' onclick='changeTrack(3,false)'><p>&lt;</p></div>
+						<div class='browseSmallCircleRightArrow' onclick='changeTrack(3,true)'><p>&gt;</p></div>
 						<div class='browseSmallCircleFlag'></div>
 					</div>
 					<div class='browseSmallCircle'>
 						<div class='browseSmallCircleInner'>
-							<video muted src='../public/video/test.mov' preload='auto'></video>
+							<video muted src='' preload='auto'></video>
 						</div>
-						<div class='browseSmallCircleLeftArrow'><p>&lt;</p></div>
-						<div class='browseSmallCircleRightArrow'><p>&gt;</p></div>
+						<div class='browseSmallCircleLeftArrow' onclick='changeTrack(4,false)'><p>&lt;</p></div>
+						<div class='browseSmallCircleRightArrow' onclick='changeTrack(4,true)'><p>&gt;</p></div>
 						<div class='browseSmallCircleFlag'></div>
 					</div>
 				</div>
 				<div id='browseInnerWrapper'>
-					<h3 onclick='startSong()'>The awesomest song!</h3>
-					<p>Rock | Pop</p>
+					<h3 onclick='startSong()'></h3>
+					<p></p>
+				</div>
+				<div id='browseContributeWrapper'>
+					<div class='button' onclick="updateCreateWrapper(1);gotoView('browseWrapper', 'createWrapper');">Contribute to this masterpiece!</div>
 				</div>
 			</div>
 			<div id='createWrapper'>
