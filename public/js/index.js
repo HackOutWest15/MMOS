@@ -141,19 +141,19 @@ function stopMetronome(completed) {
 
 var songs = [
 	{
-		'title': 'A very fine title1',
-		'key': 'C#',
-		'bpm': 120,
-		'audio': 'public/audio/test1.wav',
+		'title': 'I see fire (cover)',
+		'key': 'A#',
+		'bpm': 110,
+		'audio': 'public/audio/iseefire.mp3',
 		'alternate': 'public/audio/test1.wav',
 		'items': [
 			{
 				'type': 'Vocals',
 				'tracks': [
 					{
-						'genres': ['Rock', 'Pop'],
-						'nationality': 'Sweden',
-						'video': 'public/video/test.mov'
+						'genres': ['Pop'],
+						'nationality': 'italy',
+						'video': 'public/video/iseefire.mp4'
 					}
 				]
 			},
@@ -163,39 +163,21 @@ var songs = [
 					{
 						'genres': ['Rock', 'Pop'],
 						'nationality': 'Sweden',
-						'video': 'public/video/test.mov'
+						'video': 'public/video/iseefire2.mp4'
 					}
 				]
 			},
 			{
 				'type': 'Beat',
-				'tracks': [
-					{
-						'genres': ['Rock', 'Pop'],
-						'nationality': 'Sweden',
-						'video': 'public/video/test.mov'
-					}
-				]
+				'tracks': []
 			},
 			{
 				'type': 'Baseline',
-				'tracks': [
-					{
-						'genres': ['Rock', 'Pop'],
-						'nationality': 'Sweden',
-						'video': 'public/video/test.mov'
-					}
-				]
+				'tracks': []
 			},
 			{
 				'type': 'Wildcard',
-				'tracks': [
-					{
-						'genres': ['Rock', 'Pop'],
-						'nationality': 'Sweden',
-						'video': 'public/video/test.mov'
-					}
-				]
+				'tracks': []
 			}
 		]
 	},
@@ -226,7 +208,7 @@ var songs = [
 					},
 					{
 						'genres': ['Rock', 'Pop'],
-						'nationality': 'Sweden',
+						'nationality': 'Vietnam',
 						'video': 'public/video/test.mov'
 					}
 				]
@@ -367,11 +349,11 @@ function loadSong(song) {
 	else if(numberOfCircles == 5)
 		circleClass = 'fiveCircles';
 
-	$('#browseCircleWrapper').removeClass('#oneCircle')
-	$('#browseCircleWrapper').removeClass('#twoCircles')
-	$('#browseCircleWrapper').removeClass('#threeCircles')
-	$('#browseCircleWrapper').removeClass('#fourCircles')
-	$('#browseCircleWrapper').removeClass('#fiveCircles')
+	$('#browseCircleWrapper').removeClass('oneCircle')
+	$('#browseCircleWrapper').removeClass('twoCircles')
+	$('#browseCircleWrapper').removeClass('threeCircles')
+	$('#browseCircleWrapper').removeClass('fourCircles')
+	$('#browseCircleWrapper').removeClass('fiveCircles')
 	$('#browseCircleWrapper').addClass(circleClass);
 
 	var circleIndex = 0;
@@ -383,6 +365,7 @@ function loadSong(song) {
 				$('#browseCircleWrapper .browseSmallCircle:nth-of-type(' + (i+1) + ') .browseSmallCircleRightArrow').hide();
 			else
 				$('#browseCircleWrapper .browseSmallCircle:nth-of-type(' + (i+1) + ') .browseSmallCircleRightArrow').show();
+			$('#browseCircleWrapper .browseSmallCircle:nth-of-type(' + (i+1) + ') .browseSmallCircleFlag').css('background-image', "url('../public/images/flags/" + song.items[i].tracks[0].nationality + ".png')");
 			circleIndex++;
 		}
 	}
@@ -434,6 +417,7 @@ function changeTrack(index, next) {
 	} else
 		$('#browseCircleWrapper .browseSmallCircle:nth-of-type(' + (index+1) + ') .browseSmallCircleRightArrow').hide();
 
+	$('#browseCircleWrapper .browseSmallCircle:nth-of-type(' + (index+1) + ') .browseSmallCircleFlag').css('background-image', "url('../public/images/flags/" + songs[currentSong].items[index].tracks[currentTracks[index]].nationality + ".png')");
 	loadTrack(index, currentTracks[index]);
 	playSong(currentTracks[index] > 0);
 }
