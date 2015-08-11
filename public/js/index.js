@@ -16,7 +16,7 @@ function gotoView(from, to) {
 		$('#' + from).fadeOut(1000);
 
 	if(to == 'browseWrapper')
-		playSong();
+		playSong(false);
 
 	$('#' + to).fadeIn(1000);
 }
@@ -145,6 +145,7 @@ var songs = [
 		'key': 'C#',
 		'bpm': 120,
 		'audio': 'public/audio/test1.wav',
+		'alternate': 'public/audio/test1.wav',
 		'items': [
 			{
 				'type': 'Vocals',
@@ -203,6 +204,7 @@ var songs = [
 		'key': 'C#',
 		'bpm': 120,
 		'audio': 'public/audio/test1.wav',
+		'alternate': 'public/audio/test1.wav',
 		'items': [
 			{
 				'type': 'Vocals',
@@ -266,6 +268,7 @@ var songs = [
 		'key': 'C#',
 		'bpm': 120,
 		'audio': 'public/audio/test1.wav',
+		'alternate': 'public/audio/test1.wav',
 		'items': [
 			{
 				'type': 'Vocals',
@@ -335,7 +338,7 @@ function changeSong(next) {
 		currentSong--;
 		loadSong(songs[currentSong]);
 	}
-	playSong();
+	playSong(false);
 }
 
 function loadSong(song) {
@@ -432,7 +435,7 @@ function changeTrack(index, next) {
 		$('#browseCircleWrapper .browseSmallCircle:nth-of-type(' + (index+1) + ') .browseSmallCircleRightArrow').hide();
 
 	loadTrack(index, currentTracks[index]);
-	playSong();
+	playSong(currentTracks[index] > 0);
 }
 
 function loadTrack(index, trackIndex) {
@@ -440,11 +443,14 @@ function loadTrack(index, trackIndex) {
 }
 
 var playAudio = '';
-function playSong() {
+function playSong(alternate) {
 	console.log('play song delay');
 	var i = setInterval(function() {
 		console.log('playing song...');
-		playAudio = new Audio(songs[currentSong].audio);
+		if(alternate)
+			playAudio = new Audio(songs[currentSong].alternate);
+		else
+			playAudio = new Audio(songs[currentSong].audio);
 
 		$('#browseCircleWrapper .browseSmallCircle:nth-child(1) video')[0].play();
 		$('#browseCircleWrapper .browseSmallCircle:nth-child(2) video')[0].play();
