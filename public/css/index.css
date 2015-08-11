@@ -194,6 +194,18 @@
 	.browseSmallCircle:nth-of-type(1) .browseSmallCircleFlag {
 		background-image: url('../images/flags/sweden.png');
 	}
+	.browseSmallCircle:nth-of-type(2) .browseSmallCircleFlag {
+		background-image: url('../images/flags/ghana.png');
+	}
+	.browseSmallCircle:nth-of-type(3) .browseSmallCircleFlag {
+		background-image: url('../images/flags/italy.png');
+	}
+	.browseSmallCircle:nth-of-type(4) .browseSmallCircleFlag {
+		background-image: url('../images/flags/vietnam.png');
+	}
+	.browseSmallCircle:nth-of-type(5) .browseSmallCircleFlag {
+		background-image: url('../images/flags/ivorycoast.png');
+	}
 	.oneCircle .browseSmallCircle:nth-of-type(1) .browseSmallCircleFlag {
 		left: 50%;
 		margin-left: -10%;
@@ -562,8 +574,20 @@
 		margin-bottom: 10px;
 	}
 	#browseInnerWrapper h3 {
-		margin-top: 70px;
+		margin-top: 100px;
 		font-size: 25px;
+	}
+	#backButton {
+		position: absolute;
+		top: 50px;
+		left: 50px;
+
+		z-index: 1005;
+		font-size: 20px;
+		color: #EEE;
+	}
+	#backButton:hover {
+		color: #CCC;
 	}
 }
 
