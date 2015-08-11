@@ -185,16 +185,16 @@ var songs = [
 		'title': 'Best of you (cover)',
 		'key': 'C',
 		'bpm': 100,
-		'audio': 'public/audio/bestofyou.wav',
+		'audio': 'public/audio/bestofyou.mp3',
 		'alternate': 'public/audio/test1.wav',
 		'items': [
 			{
 				'type': 'Vocals',
 				'tracks': [
 					{
-						'genres': ['Rock', 'Pop'],
+						'genres': ['Rock'],
 						'nationality': 'Sweden',
-						'video': 'public/video/bestofyou.mp4'
+						'video': 'public/video/bestofyou2.mp4'
 					}
 				]
 			},
@@ -202,46 +202,23 @@ var songs = [
 				'type': 'Main riff',
 				'tracks': [
 					{
-						'genres': ['Rock', 'Pop'],
-						'nationality': 'Sweden',
-						'video': 'public/video/test2.mov'
-					},
-					{
-						'genres': ['Rock', 'Pop'],
-						'nationality': 'Vietnam',
-						'video': 'public/video/test.mov'
+						'genres': ['Rock'],
+						'nationality': 'ivorycoast',
+						'video': 'public/video/bestofyou.mp4'
 					}
 				]
 			},
 			{
 				'type': 'Beat',
-				'tracks': [
-					{
-						'genres': ['Rock', 'Pop'],
-						'nationality': 'Sweden',
-						'video': 'public/video/test2.mov'
-					}
-				]
+				'tracks': []
 			},
 			{
 				'type': 'Baseline',
-				'tracks': [
-					{
-						'genres': ['Rock', 'Pop'],
-						'nationality': 'Sweden',
-						'video': 'public/video/test2.mov'
-					}
-				]
+				'tracks': []
 			},
 			{
 				'type': 'Wildcard',
-				'tracks': [
-					{
-						'genres': ['Rock', 'Pop'],
-						'nationality': 'Sweden',
-						'video': 'public/video/test2.mov'
-					}
-				]
+				'tracks': []
 			}
 		]
 	},
