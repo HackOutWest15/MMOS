@@ -182,10 +182,10 @@ var songs = [
 		]
 	},
 	{
-		'title': 'A very fine title2',
-		'key': 'C#',
-		'bpm': 120,
-		'audio': 'public/audio/test1.wav',
+		'title': 'Best of you (cover)',
+		'key': 'C',
+		'bpm': 100,
+		'audio': 'public/audio/bestofyou.wav',
 		'alternate': 'public/audio/test1.wav',
 		'items': [
 			{
@@ -194,7 +194,7 @@ var songs = [
 					{
 						'genres': ['Rock', 'Pop'],
 						'nationality': 'Sweden',
-						'video': 'public/video/test2.mov'
+						'video': 'public/video/bestofyou.mp4'
 					}
 				]
 			},

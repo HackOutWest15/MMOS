@@ -151,7 +151,6 @@
 		background-color: black;
 		border-radius: 100%;
 		object-fit: cover;
-		transform:rotate(90deg);
 	}
 	.browseSmallCircleLeftArrow, .browseSmallCircleRightArrow {
 		height: 100%;
