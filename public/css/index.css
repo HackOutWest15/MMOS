@@ -192,6 +192,9 @@
 		background-color: magenta;
 
 		border-radius: 100%;
+		background-size: 100% 100%;
+		background-position: 0 0;
+		background-image: url('../images/flags/Sweden.png');
 	}
 	.oneCircle .browseSmallCircle:nth-of-type(1) .browseSmallCircleFlag {
 		left: 50%;
