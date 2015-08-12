@@ -186,7 +186,7 @@ var songs = [
 		'key': 'C',
 		'bpm': 100,
 		'audio': 'public/audio/bestofyou.mp3',
-		'alternate': 'public/audio/test1.wav',
+		'alternate': 'public/audio/bestofyou2.mp3',
 		'items': [
 			{
 				'type': 'Vocals',
@@ -195,6 +195,11 @@ var songs = [
 						'genres': ['Rock'],
 						'nationality': 'Sweden',
 						'video': 'public/video/bestofyou2.mp4'
+					},
+					{
+						'genres': ['Rock'],
+						'nationality': 'Ghana',
+						'video': 'public/video/bestofyou3.mp4'
 					}
 				]
 			},
@@ -405,6 +410,7 @@ function loadTrack(index, trackIndex) {
 
 var playAudio = '';
 function playSong(alternate) {
+	stopVideo();
 	console.log('play song delay');
 	var i = setInterval(function() {
 		console.log('playing song...');
@@ -430,6 +436,19 @@ function stopSong() {
 		playAudio.pause();
 		playAudio.currentTime = 0;
 	}
+}
+
+function stopVideo() {
+	$('#browseCircleWrapper .browseSmallCircle:nth-child(1) video')[0].pause();
+	$('#browseCircleWrapper .browseSmallCircle:nth-child(2) video')[0].pause();
+	$('#browseCircleWrapper .browseSmallCircle:nth-child(3) video')[0].pause();
+	$('#browseCircleWrapper .browseSmallCircle:nth-child(4) video')[0].pause();
+	$('#browseCircleWrapper .browseSmallCircle:nth-child(5) video')[0].pause();
+	$('#browseCircleWrapper .browseSmallCircle:nth-child(1) video')[0].currentTime = 0;
+	$('#browseCircleWrapper .browseSmallCircle:nth-child(2) video')[0].currentTime = 0;
+	$('#browseCircleWrapper .browseSmallCircle:nth-child(3) video')[0].currentTime = 0;
+	$('#browseCircleWrapper .browseSmallCircle:nth-child(4) video')[0].currentTime = 0;
+	$('#browseCircleWrapper .browseSmallCircle:nth-child(5) video')[0].currentTime = 0;
 }
 
 loadSong(songs[0]);
