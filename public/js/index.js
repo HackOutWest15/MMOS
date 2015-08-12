@@ -153,7 +153,7 @@ var songs = [
 					{
 						'genres': ['Pop'],
 						'nationality': 'italy',
-						'video': 'public/video/iseefire.mp4'
+						'video': 'public/video/iseefire.mov'
 					}
 				]
 			},
@@ -163,7 +163,7 @@ var songs = [
 					{
 						'genres': ['Rock', 'Pop'],
 						'nationality': 'Sweden',
-						'video': 'public/video/iseefire2.mp4'
+						'video': 'public/video/iseefire2.mov'
 					}
 				]
 			},
@@ -204,7 +204,7 @@ var songs = [
 					{
 						'genres': ['Rock'],
 						'nationality': 'ivorycoast',
-						'video': 'public/video/bestofyou.mp4'
+						'video': 'public/video/bestofyou.mov'
 					}
 				]
 			},
